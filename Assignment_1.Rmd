@@ -7,38 +7,38 @@ output: html_document
 
 ## Problem 1: Create the Vectors
 
-###(a) (1,2,3,...,19,20)
+### (a) (1,2,3,...,19,20)
 ```{r}
 seq(from=1, to=20)
 ```
 
-###(b) (20,19,...,2,1)
+### (b) (20,19,...,2,1)
 ```{r}
 seq(from=20, to=1)
 ```
 
-###(c) (1,2,3,...,19,20,19,18,...,2,1)
+### (c) (1,2,3,...,19,20,19,18,...,2,1)
 ```{r}
 c(1:20,19:1)
 ```
 
-###(d) (4, 6, 3) and assign it to the name tmp.
+### (d) (4, 6, 3) and assign it to the name tmp.
 ```{r}
 tmp <- c(4,6,3)
 tmp
 ```
 
-###(e) (4,6,3, 4,6,3,...,4,6,3) where there are 10 occurrences of 4.
+### (e) (4,6,3, 4,6,3,...,4,6,3) where there are 10 occurrences of 4.
 ```{r}
 rep(tmp,times=10)
 ```
 
-###(f) (4,6,3, 4,6,3,...,4,6,3,4) where there are 11 occurrences of 4, 10 occurrences of 6 and 10 occur- rences of 3.
+### (f) (4,6,3, 4,6,3,...,4,6,3,4) where there are 11 occurrences of 4, 10 occurrences of 6 and 10 occur- rences of 3.
 ```{r}
 c(rep(tmp,length=31))
 ```
 
-###(g) (4,4,...,4, 6,6,...,6, 3,3,...,3) where there are 10 occurrences of 4, 20 occurrences of 6 and 30 occurrences of 3.
+### (g) (4,4,...,4, 6,6,...,6, 3,3,...,3) where there are 10 occurrences of 4, 20 occurrences of 6 and 30 occurrences of 3.
 ```{r}
 c(rep(tmp[1],times=10),rep(tmp[2],times=20),rep(tmp[3],times=30))
 ```
