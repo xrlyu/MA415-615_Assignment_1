@@ -169,7 +169,7 @@ length(xVec[xVec%%2==0])
 xVec[order(yVec)]
 ```
 
-### (h) PickouttheelementsinyVecatindexpositions1,4,7,10,13,....
+### (h) Pick out the elements in yVec at index positions 1,4,7,10,13,....
 ```{r}
 index <- seq(from=1, to=250,by=3)
 yVec[index]
