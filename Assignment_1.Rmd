@@ -2,7 +2,8 @@
 title: "Assignment_1"
 author: "Xiru Lyu"
 date: "1/22/2018"
-output: html_document
+output:
+  pdf_document: default
 ---
 
 ## Problem 1: Create the Vectors
@@ -43,9 +44,142 @@ c(rep(tmp,length=31))
 c(rep(tmp[1],times=10),rep(tmp[2],times=20),rep(tmp[3],times=30))
 ```
 
-## Problem 2: Create a vector of the values of ex cos(x) at x = 3,3.1,3.2,...,
+
+## Problem 2: Create a vector of the values of ex cos(x) at x = 3,3.1,3.2,...,6.
+
 ```{r}
 x <- seq(from=3, to=6, by=0.1)
 exp(x)*cos(x)
+```
+
+
+## Problem 3: Create the following vectors
+
+### (a)
+```{r}
+a <- seq(from=3,to=36,by=3)
+b <- seq(from=1,to=34,by=3)
+0.1^a*0.2^b
+```
+
+### (b)
+```{r}
+c <- seq(from=1,to=25)
+2^c/c
+```
+
+
+## Problem 4: Calculate the following
+
+### (a)
+```{r}
+i_1 <- seq(from=10, to=100)
+sum(i_1^3+4*i_1^2)
+```
+
+### (b)
+```{r}
+i_2 <- seq(from=1, to=25)
+sum((2^i_2/i_2)+(3^i_2/i_2^2))
+```
+
+
+## Problem 5: Use the function *paste* to create the following character vectors of length 30
+
+### (a) ("label 1", "label 2", ....., "label 30").
+```{r}
+paste(c("label"), 1:30)
+```
+
+### (b) ("fn1", "fn2", ..., "fn30").
+```{r}
+paste(c('fn'), 1:30, sep="")
+```
+
+
+## Problem 6
+
+```{r}
+set.seed(50)
+xVec <- sample(0:999, 250, replace=T)
+yVec <- sample(0:999, 250, replace=T)
+
+n <- seq(from=2,to=250)
+```
+
+### (a) Create the vector
+```{r}
+yVec[n]-xVec[n-1]
+```
+
+### (b) Create the vector
+```{r}
+sin(yVec[n-1])/cos(xVec[n])
+```
+
+### (c) Create the vector
+```{r}
+k <- seq(from=3,to=250)
+xVec[k-2]+2*xVec[k-1]-xVec[k]
+```
+
+### (d) Calculate the value
+```{r}
+m <- seq(from=1,to=249)
+sum(exp(-xVec[m+1])/(xVec[m]+10))
+```
+
+
+## Problem 7
+
+### (a) Pick out the values in yVec which are > 600.
+```{r}
+yVec[yVec>600]
+```
+
+### (b) What are the index positions in yVec of the values which are > 600?
+```{r}
+w <- which(yVec>600)
+w
+```
+
+### (c) What are the values in xVec which correspond to the values in yVec which are > 600?
+```{r}
+xVec[w]
+```
+
+### (d) Create the vector
+```{r}
+num <- seq(from=1,to=250)
+abs(xVec[num]-mean(xVec))^(1/2)
+```
+
+### (e) How many values in yVec are within 200 of the maximum value of the terms in yVec?
+```{r}
+length(yVec[yVec<=max(yVec)+200 & yVec>=max(yVec)-200])
+```
+
+### (f) How many numbers in xVec are divisible by 2?
+```{r}
+length(xVec[xVec%%2==0])
+```
+
+### (g) Sort the numbers in the vector xVec in the order of increasing values in yVec.
+```{r}
+xVec[order(yVec)]
+```
+
+### (h) PickouttheelementsinyVecatindexpositions1,4,7,10,13,....
+```{r}
+index <- seq(from=1, to=250,by=3)
+yVec[index]
+```
+
+
+## Problem 8: Calculation
+```{r}
+u <- seq(from=2, to=38, by=2)
+d <- seq(from=3, to=39, by=2)
+sum(cumprod(u/d))+1
 ```
 
